@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Proejto luta</title>
 </head>
-<body>
-    
-    
 
-<script src="assets/js/script.js"></script>
+<body>
+
+    <!-- Arena de luta -->
+    <div class="fightarea">
+
+        <!-- Boneco principal -->
+        <div id="char">
+            <div class="lifebar">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+                <strong class="name">--</strong>
+            <div>
+                <button class="attackButton">Atacar</button>
+            </div>
+        </div>
+
+        <!-- Monstro -->
+        <div id="monster">
+            <div class="lifebar">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+                <strong class="name">--</strong>
+            <div>
+                <button class="attackButton">Atacar</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Log (área onde aparece o histórico de golpes) -->
+    <ul class="log">
+
+    </ul>
+
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
