@@ -1,6 +1,11 @@
-// KNIGHT OU SORCERER 
-// LITTLEMONSTER OU BIGMONSTER
+/* 
+Nomes: 
 
+Heróis: KNIGHT OU SORCERER 
+Monstros: LITTLEMONSTER OU BIGMONSTER 
+*/
+
+//Criando caracteríscas
 class Character {
 
     _life = 1;
@@ -12,7 +17,7 @@ class Character {
         this.name = name; 
     }
 
-    //fazendo a verificação para não deixar a vida do boneco menor do que 0 
+    //Fazendo a verificação para não deixar a vida do boneco menor do que 0 (get e set)
     get life() {
         return this._life;
     }
@@ -26,6 +31,9 @@ class Character {
     }
 }
 
+//Criando os "Heróis"
+
+//Knight
 class Knight extends Character {
     constructor(name) {
         super(name);
@@ -36,6 +44,7 @@ class Knight extends Character {
     }
 }
 
+//Sorcerer
 class sorcerer extends Character {
     constructor(name) {
         super(name);
@@ -46,3 +55,5 @@ class sorcerer extends Character {
     }
 }
 
+
+//Criando os monstros
