@@ -9,7 +9,7 @@ class Character {
     defense = 0;
 
     constructor(name) {
-        this.name = name 
+        this.name = name; 
     }
 
     //fazendo a verificação para não deixar a vida do boneco menor do que 0 
@@ -24,5 +24,14 @@ class Character {
                                                 ele leva um soco e sua vida vai de 100 pra 90, ele perdeu 10 de vida, 
                                                 e sua nova vida é 90*/
     }
+}
 
+class Knight extends Character {
+    constructor(name) {
+        super(name);
+        this.life = 100;
+        this.attack = 10;
+        this.defense = 89;
+        
+    }
 }
