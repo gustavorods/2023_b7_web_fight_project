@@ -31,7 +31,18 @@ class Knight extends Character {
         super(name);
         this.life = 100;
         this.attack = 10;
-        this.defense = 89;
-        
+        this.defense = 8;
+        this.maxLife = this.life
     }
 }
+
+class sorcerer extends Character {
+    constructor(name) {
+        super(name);
+        this.life = 80;
+        this.attack = 15;
+        this.defense = 3;
+        this.maxLife = this._life
+    }
+}
+
