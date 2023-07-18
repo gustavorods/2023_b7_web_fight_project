@@ -81,3 +81,27 @@ class BigMonster extends Character {
     }
 }
 
+//Cenário
+class Stage {
+    constructor(fighter1, fighter2, fighter1EL, fighter2EL) {
+        this.fighter1 = fighter1;
+        this.fighter2 = fighter2;
+        this.fighter1EL = fighter1EL;
+        this.fighter2EL = fighter2EL;
+    }
+
+    start() {
+        this.update();
+    }
+    
+    update() {
+        // Fighter 1 
+        this.fighter1EL.querySelector('.name').innerHTML = this.fighter1.name;
+
+          // Fighter 2 
+          this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
+    }
+}
+
+
+
