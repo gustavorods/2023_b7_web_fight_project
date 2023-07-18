@@ -90,6 +90,7 @@ class Stage {
         this.fighter2EL = fighter2EL;
     }
 
+    // Funcação de start no jogo
     start() {
         this.update();
     }
@@ -98,8 +99,8 @@ class Stage {
         // Fighter 1 
         this.fighter1EL.querySelector('.name').innerHTML = this.fighter1.name;
 
-          // Fighter 2 
-          this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
+        // Fighter 2 
+        this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
     }
 }
 
