@@ -5,6 +5,7 @@ Heróis: KNIGHT OU SORCERER
 Monstros: LITTLEMONSTER OU BIGMONSTER 
 */
 
+
 //Criando caracteríscas
 class Character {
 
@@ -57,3 +58,26 @@ class sorcerer extends Character {
 
 
 //Criando os monstros
+
+//Little monster 
+class LittlerMonster extends Character {
+    constructor() {
+        super("Little Monster");
+        this.life = 40;
+        this.attack = 4;
+        this.defense = 4;
+        this.maxLife = this.life;
+    }
+}
+
+//BigMonster 
+class BigMonster extends Character {
+    constructor() {
+        super("Big Monster");
+        this.life = 120;
+        this.attack = 16;
+        this.defense = 6;
+        this.maxLife = this.life;
+    }
+}
+
