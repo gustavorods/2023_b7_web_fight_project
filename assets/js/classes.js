@@ -93,26 +93,33 @@ class Stage {
     // Funcação de start no jogo
     start() {
         this.update();
-        // TODO: Evento de atacar 
+
+        //Evento de atacar 
+        this.fighter1EL.querySelector(".attackButton").addEventListener("click", () => this.doAttack(this.fighter1, this.fighter2));
+        this.fighter2EL.querySelector(".attackButton").addEventListener("click", () => this.doAttack(this.fighter2, this.fighter1));
     }
     
     update() {
         // Fighter 1 
-        //Nome
-        this.fighter1EL.querySelector('.name').innerHTML = this.fighter1.name; 
+            //Nome
+            this.fighter1EL.querySelector('.name').innerHTML = `${this.fighter1.name} | ${this.fighter1.life} HP`; 
 
-        //vida   
-        let f1PCt = (this.fighter1.life / this.fighter1.maxLife) * 100;
-        this.fighter1EL.querySelector(".lifebar .bar").style.width = `${f1PCt}%`;
+            //vida   
+            let f1PCt = (this.fighter1.life / this.fighter1.maxLife) * 100;
+            this.fighter1EL.querySelector(".lifebar .bar").style.width = `${f1PCt}%`;
 
 
         // Fighter 2 
-        //Nome
-        this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
+            //Nome
+            this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
 
-         //vida   
-         let f2PCt = (this.fighter2.life / this.fighter2.maxLife) * 100;
-         this.fighter2EL.querySelector(".lifebar .bar").style.width = `${f2PCt}%`;
+            //vida   
+            let f2PCt = (this.fighter2.life / this.fighter2.maxLife) * 100;
+            this.fighter2EL.querySelector(".lifebar .bar").style.width = `${f2PCt}%`;
+    }
+
+    doAttack(attracking, attacked) {
+        console.log(`${attracking.name} está atacando ${attacked.name}`)
     }
 }
 
