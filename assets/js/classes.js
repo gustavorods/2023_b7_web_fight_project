@@ -52,7 +52,7 @@ class sorcerer extends Character {
         this.life = 80;
         this.attack = 15;
         this.defense = 3;
-        this.maxLife = this._life
+        this.maxLife = this._life;
     }
 }
 
@@ -93,14 +93,26 @@ class Stage {
     // Funcação de start no jogo
     start() {
         this.update();
+        // TODO: Evento de atacar 
     }
     
     update() {
         // Fighter 1 
-        this.fighter1EL.querySelector('.name').innerHTML = this.fighter1.name;
+        //Nome
+        this.fighter1EL.querySelector('.name').innerHTML = this.fighter1.name; 
+
+        //vida   
+        let f1PCt = (this.fighter1.life / this.fighter1.maxLife) * 100;
+        this.fighter1EL.querySelector(".lifebar .bar").style.width = `${f1PCt}%`;
+
 
         // Fighter 2 
+        //Nome
         this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
+
+         //vida   
+         let f2PCt = (this.fighter2.life / this.fighter2.maxLife) * 100;
+         this.fighter2EL.querySelector(".lifebar .bar").style.width = `${f2PCt}%`;
     }
 }
 
