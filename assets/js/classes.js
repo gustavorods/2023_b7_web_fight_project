@@ -119,7 +119,26 @@ class Stage {
     }
 
     doAttack(attracking, attacked) {
-        if(attracking.life <= 0 || attacked.life <= 0 )
+        if(attracking.life <= 0 || attacked.life <= 0 ) {
+            console.log(`Atacando cachorro morto`);
+            return;
+        }
+
+        let attackFactor = (Math.random() * 2).toFixed(2);  //gerando um número aleatorio 
+        let defenseFactor = (Math.random() * 2).toFixed(2);
+        //OBS: math.random = número aleatório | .toFixed = número maximo que ele pode gerar
+        
+        let actualAttack = attracking.attack * attackFactor; //Fornecendo um valor de ataque aleatorio no boneco (= força de ataque * número aleatório)
+        let actualDefense = attracking.defense * defenseFactor; 
+
+        if(actualAttack > actualDefense) {
+            attacked.life -= actualAttack
+            console.log(`${attracking.name} atacou ${attacked.name} e causo ${actualAttack} de dano.`)
+        }
+        else {
+            console.log(`${attacked.name} consegui defender...`);
+        }
+
         this.update();
     }
 }
