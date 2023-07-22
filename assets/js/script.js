@@ -9,3 +9,4 @@ const stage = new Stage (
 );
 
 stage.start();
+

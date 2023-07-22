@@ -119,7 +119,8 @@ class Stage {
     }
 
     doAttack(attracking, attacked) {
-        console.log(`${attracking.name} está atacando ${attacked.name}`)
+        if(attracking.life <= 0 || attacked.life <= 0 )
+        this.update();
     }
 }
 
