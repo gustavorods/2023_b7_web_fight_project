@@ -102,7 +102,7 @@ class Stage {
     update() {
         // Fighter 1 
             //Nome
-            this.fighter1EL.querySelector('.name').innerHTML = `${this.fighter1.name} | ${this.fighter1.life} HP`; 
+            this.fighter1EL.querySelector('.name').innerHTML = `${this.fighter1.name} | ${this.fighter1.life.toFixed(2)} HP`; 
 
             //vida   
             let f1PCt = (this.fighter1.life / this.fighter1.maxLife) * 100;
@@ -111,7 +111,7 @@ class Stage {
 
         // Fighter 2 
             //Nome
-            this.fighter2EL.querySelector('.name').innerHTML = this.fighter2.name;
+            this.fighter2EL.querySelector('.name').innerHTML = `${this.fighter2.name} | ${this.fighter2.life.toFixed(2)} HP`;
 
             //vida   
             let f2PCt = (this.fighter2.life / this.fighter2.maxLife) * 100;
@@ -121,7 +121,7 @@ class Stage {
     doAttack(attracking, attacked) {
         if(attracking.life <= 0 || attacked.life <= 0 ) {
             console.log(`Atacando cachorro morto`);
-            return;
+            return; //para o código 
         }
 
         let attackFactor = (Math.random() * 2).toFixed(2);  //gerando um número aleatorio 
@@ -129,14 +129,14 @@ class Stage {
         //OBS: math.random = número aleatório | .toFixed = número maximo que ele pode gerar
         
         let actualAttack = attracking.attack * attackFactor; //Fornecendo um valor de ataque aleatorio no boneco (= força de ataque * número aleatório)
-        let actualDefense = attracking.defense * defenseFactor; 
+        let actualDefense = attacked.defense * defenseFactor; 
 
         if(actualAttack > actualDefense) {
             attacked.life -= actualAttack
-            console.log(`${attracking.name} atacou ${attacked.name} e causo ${actualAttack} de dano.`)
+            console.log(`${attracking.name} atacou ${attacked.name} e causo ${actualAttack.toFixed(2)} de dano.`)
         }
         else {
-            console.log(`${attacked.name} consegui defender...`);
+            console.log(`${attacked.name} conseguiu defender...`);
         }
 
         this.update();
