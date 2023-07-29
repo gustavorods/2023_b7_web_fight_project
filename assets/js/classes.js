@@ -83,11 +83,12 @@ class BigMonster extends Character {
 
 //Cenário
 class Stage {
-    constructor(fighter1, fighter2, fighter1EL, fighter2EL) {
+    constructor(fighter1, fighter2, fighter1EL, fighter2EL, logObject) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighter1EL = fighter1EL;
         this.fighter2EL = fighter2EL;
+        this.Log = logObject;
     }
 
     // Funcação de start no jogo
@@ -120,7 +121,7 @@ class Stage {
 
     doAttack(attracking, attacked) {
         if(attracking.life <= 0 || attacked.life <= 0 ) {
-            console.log(`Atacando cachorro morto`);
+            this.Log.addMessage(`Atacando cachorro morto`);
             return; //para o código 
         }
 
@@ -133,15 +134,38 @@ class Stage {
 
         if(actualAttack > actualDefense) {
             attacked.life -= actualAttack
-            console.log(`${attracking.name} atacou ${attacked.name} e causo ${actualAttack.toFixed(2)} de dano.`)
+            this.Log.addMessage(`${attracking.name} atacou ${attacked.name} e causo ${actualAttack.toFixed(2)} de dano.`)
         }
         else {
-            console.log(`${attacked.name} conseguiu defender...`);
+            this.Log.addMessage(`${attacked.name} conseguiu defender...`);
         }
 
         this.update();
     }
 }
+
+class Log {
+    list = [];
+
+    constructor(listEl) {
+        this.listEl = listEl;
+    }
+
+    addMessage(msg) {
+        this.list.push = msg;
+        this.render();
+    }
+
+    render() {
+        this.listEl.innerHTML = ''
+
+        for (let i in this.list) { //Loop For-in é usado para percorrer as chaves (ou índices, no caso de arrays) de um objeto.
+            this.listEl.innerHTML += `<li>${this.list[i]}</li>` //i (key/chave), acessa todos os elemento do array 
+        }
+    }
+}
+
+
 
 
 
